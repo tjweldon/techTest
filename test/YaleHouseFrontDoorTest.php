@@ -6,6 +6,7 @@ use Src\Door\YaleHouseFrontDoor;
 use PHPUnit\Framework\TestCase;
 use Src\Exception\AlreadyClosedException;
 use Src\Exception\AlreadyOpenException;
+use Src\Exception\CannotOpenLockedDoorException;
 use Src\Exception\WrongKeyException;
 use Src\Key;
 
@@ -88,6 +89,14 @@ class YaleHouseFrontDoorTest extends TestCase
         $door = $this->getYaleHouseFrontDoor(false, true);
 
         $this->expectException(AlreadyOpenException::class);
+        $door->open();
+    }
+
+    public function testOpenLockedDoor()
+    {
+        $door = $this->getYaleHouseFrontDoor(true, false);
+
+        $this->expectException(CannotOpenLockedDoorException::class);
         $door->open();
     }
 
