@@ -7,4 +7,6 @@ abstract class AbstractDoor
     abstract public function open();
 
     abstract public function close();
+
+    abstract public function isOpen(): bool;
 }
