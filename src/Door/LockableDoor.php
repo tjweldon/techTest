@@ -2,11 +2,13 @@
 
 namespace Src\Door;
 
+use Src\Key;
+
 abstract class LockableDoor extends AbstractDoor
 {
-    abstract function lock();
+    abstract function lock(Key $key);
 
-    abstract function unlock();
+    abstract function unlock(Key $key);
 
     abstract function isLocked(): bool;
 }
