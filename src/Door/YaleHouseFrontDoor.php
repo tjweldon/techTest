@@ -27,11 +27,6 @@ class YaleHouseFrontDoor implements Openable, Closeable, Lockable, Unlockable
         // TODO: Implement close() method.
     }
 
-    public function isClosed(): bool
-    {
-        // TODO: Implement isClosed() method.
-    }
-
     /**
      * @throws AlreadyLockedException
      * @throws WrongKeyException

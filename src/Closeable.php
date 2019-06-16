@@ -11,5 +11,5 @@ interface Closeable
      */
     public function close();
 
-    public function isClosed(): bool;
+    public function isOpen(): bool;
 }
