@@ -2,17 +2,13 @@
 
 namespace Src\Door;
 
-use Src\Closeable;
 use Src\Exception\AlreadyClosedException;
 use Src\Exception\AlreadyLockedException;
 use Src\Exception\AlreadyOpenException;
 use Src\Exception\WrongKeyException;
 use Src\Key;
-use Src\Lockable;
-use Src\Openable;
-use Src\Unlockable;
 
-class YaleHouseFrontDoor implements Openable, Closeable, Lockable, Unlockable
+class YaleHouseFrontDoor extends LockableDoor
 {
     public function __construct(string $keyString)
     {
